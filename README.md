@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Testing Portfolio Project
 
-[![CI](https://github.com/<YOUR_USERNAME>/ecommerce-testing-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/<YOUR_USERNAME>/ecommerce-testing-portfolio/actions/workflows/ci.yml)
+[![CI](https://github.com/ozturkeren/QA-TPs_ecommerce-testing-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/ozturkeren/QA-TPs_ecommerce-testing-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 This project is part of my **QA Test Engineering portfolio**.  
@@ -101,4 +101,4 @@ This project is licensed under the [MIT License](LICENSE).
 I am an aspiring **QA/Test Engineer** passionate about building quality into software through a mix of manual, exploratory, and automated testing.  
 I am open to **internship and junior QA opportunities** across the EU.  
   
-📫 Connect with me on [LinkedIn](https://www.linkedin.com/in/ozturk-eren/) by sending messages 
+📫 Connect with me on [LinkedIn](https://www.linkedin.com/in/ozturk-eren/) by sending messages.
