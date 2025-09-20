@@ -44,7 +44,7 @@ It demonstrates skills in **manual testing**, **UI automation with Selenium**, *
 
 # Linux / macOS
 ./gradlew test
-
+```
 ---
 
 ## 📊 Viewing Reports
