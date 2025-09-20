@@ -49,10 +49,24 @@ It demonstrates skills in **manual testing**, **UI automation with Selenium**, *
 
 ## 📊 Viewing Reports
 
+### 📷 Sample Screenshots
+
+Visual evidence from test execution and reporting tools.    
+
+**Examples:**  
+- ✅ Allure Dashboard with summary metrics  
+- ✅ Test details with attached screenshots  
+
+![Allure Dashboard](docs/screenshots/allure-dashboard.jpg)  
+*Allure dashboard showing test pass rate and execution timeline.*  
+
+![Test Detail](docs/screenshots/test-detail.jpg)  
+*Detailed test case execution with step-by-step logs and attached screenshot.*  
+
 ### 🔹 Allure Report
 To generate and open an interactive HTML report with screenshots:
 ```bash
-allure serve build/allure-results
+allure serve <build/allure-results> # Write the directory path
 ```
 This opens a browser window showing:
 - Step-by-step test execution  
