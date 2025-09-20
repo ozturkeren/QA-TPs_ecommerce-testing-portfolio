@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,9 +25,17 @@ public class LoginTest {
 
     @BeforeEach
     void setUp() {
+        ChromeOptions options = new ChromeOptions();
+        // Headless in CI
+        if (System.getenv("CI") != null || Boolean.parseBoolean(System.getProperty("headless", "false"))) {
+            options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
+        }
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/"); // Demo e-commerce site for testing
+
         pause("Browser opened and navigated to login page.");
     }
 
