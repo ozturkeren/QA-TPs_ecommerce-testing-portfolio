@@ -19,28 +19,43 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-          cache: 'gradle'
+          cache: gradle
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      # Install Chrome (stable) in a supported, reproducible way
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      # - name: Make gradlew executable
+      #  run: chmod +x gradlew
 
       - name: Run tests (headless)
         run: ./gradlew test -Dheadless=true
+        shell: bash
 
+      # --- REPORTING STEPS ---
       # Upload Allure results (raw) as an artifact
-      - name: Upload allure-results
-        uses: actions/upload-artifact@v4
+      - name: Upload Allure results
         if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: build/allure-results
 
-      # Also upload JUnit XML for quick inspection (optional)
-      - name: Upload test reports (JUnit XML / Gradle)
-        uses: actions/upload-artifact@v4
+      # Upload JUnit XML for quick inspection
+      - name: Upload JUnit & Gradle reports
         if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: junit-and-gradle-reports
           path: |
             build/test-results/test
             build/reports/tests/test
+
+      - name: Upload HTML test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: build/reports/tests/test
