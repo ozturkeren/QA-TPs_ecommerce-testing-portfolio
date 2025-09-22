@@ -27,12 +27,15 @@ public class LoginTest {
     void setUp() {
         ChromeOptions options = new ChromeOptions();
         // Headless in CI
-        if (System.getenv("CI") != null || Boolean.parseBoolean(System.getProperty("headless", "false"))) {
+        if (System.getenv("CI") != null ||
+                Boolean.parseBoolean(System.getProperty("headless", "false"))) {
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
+            options.addArguments("--no-sandbox");              // <-- add for CI
+            options.addArguments("--disable-dev-shm-usage");   // <-- add for CI
         }
 
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/"); // Demo e-commerce site for testing
 
