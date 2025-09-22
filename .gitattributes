@@ -1,5 +1,7 @@
 # Shell scripts → enforce LF
 *.sh text eol=lf
+*.yml text eol=lf
+.gitignore text eol=lf
 gradlew text eol=lf
 
 # Windows batch files → enforce CRLF
